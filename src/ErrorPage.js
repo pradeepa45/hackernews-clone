@@ -7,14 +7,17 @@ class ErrorPage extends Component{
     render(){
         document.title = 'Error:404 Not Found'
         return(
-            <div id="loa">
-                <Segment very raised padded  id='loaders'>
+            <div id="err-page">
+                <Segment very raised padded  id='err-seg'>
                    <Message error>
                        <Header>Uh-Oh.. Looks like you're lost</Header>
-                        <Button inverted as={Link} to='/best'>Go Back</Button>
+                       <br />
+                        <Button as={Link} to='/' color='red'>Go Back</Button>
                    </Message>
                 </Segment>
             </div>
         )
     }
 }
+
+export default ErrorPage;

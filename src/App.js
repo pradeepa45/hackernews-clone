@@ -1,9 +1,10 @@
-import { Icon, Menu} from 'semantic-ui-react'
+import { Icon, Menu } from 'semantic-ui-react'
 import { Component } from 'react';
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import BestStories from './BestStories';
 import NewStories from './NewStories';
 import TopStories from './TopStories';
+import ErrorPage from './ErrorPage';
 
 export default class App extends Component {
   state = {
@@ -19,7 +20,7 @@ export default class App extends Component {
     return (
       <div id="cont">
         <Router>
-          <Menu size='huge' inverted  id="myHeader">
+          <Menu size='huge' inverted id="myHeader">
             <Menu.Item id="to-top">
               <Icon name='hacker news square' size='large'></Icon>
             </Menu.Item>
@@ -42,42 +43,60 @@ export default class App extends Component {
               onClick={this.handleItemClick}
             />
           </Menu>
-          
+
           <Switch>
-          <Route
-            exact
-            path='/best'
-            render={()=>{
-              return(
-                <BestStories type={"best"}/>
-              )
-            }}
-          />
+            <Route
+              exact
+              path='/best'
+              render={() => {
+                return (
+                  <BestStories type={"best"} />
+                )
+              }}
+            />
 
-          <Route
-            exact
-            path='/top'
-            render={()=>{
-              return(
-                <TopStories type={"top"}/>
-              )
-            }}
-          />
+            <Route
+              exact
+              path='/'
+              render={() => {
+                return (
+                  <BestStories type={"best"} />
+                )
+              }}
+            />
 
-          <Route
-            exact
-            path='/new'
+            <Route
+              exact
+              path='/top'
+              render={() => {
+                return (
+                  <TopStories type={"top"} />
+                )
+              }}
+            />
+
+            <Route
+              exact
+              path='/new'
+              render={() => {
+                return (
+                  <NewStories type={"new"} />
+                )
+              }}
+            />
+            <Route 
+            path="/*"
             render={()=>{
               return(
-                <NewStories type={"new"}/>
+                <ErrorPage />
               )
             }}
-          />
-          
+            />
+
           </Switch>
         </Router>
 
-        
+
       </div>
     );
   }

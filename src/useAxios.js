@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-var final = [];
+
 export default function useAxios(Linktype) {
   const url = `https://hacker-news.firebaseio.com/v0/${Linktype}stories.json?print=pretty&orderBy="$key"&limitToFirst=30`;
   const [ids, setIds] = useState([]);

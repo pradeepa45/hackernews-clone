@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Container, Dimmer, Feed, Loader, Segment } from 'semantic-ui-react';
 import NewsTemplate from './NewsTemplate';
 import useAxios from './useAxios';
