@@ -22,20 +22,20 @@ function TopStories(props) {
     else {
         return (
             <Container >
-                <Feed inverted>
+                <Feed>
                     {final.map((item) => {
+                        const {id, title, by, url, score, time } = item.data
                         return (
                             <NewsTemplate
-                                key={item.data.id}
-                                title={item.data.title}
-                                by={item.data.by}
-                                url={item.data.url}
-                                score={item.data.score}
-                                date={item.data.time}
+                                key={id}
+                                title={title}
+                                by={by}
+                                url={url}
+                                score={score}
+                                date={time}
                             />
                         )
                     })}
-                    {/* hi */}
                 </Feed>
             </Container>
         )
