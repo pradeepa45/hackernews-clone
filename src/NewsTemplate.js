@@ -21,7 +21,7 @@ function NewsTemplate(props) {
     var ct = timeConverter(t);
     // console.log("ct ",ct);
     return (
-        <Feed.Event>
+        <Feed.Event id={props.id}>
             
             <Feed.Content>
                 <Feed.Summary>
