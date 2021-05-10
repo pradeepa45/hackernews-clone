@@ -57,7 +57,7 @@ export default class App extends Component {
 
             <Route
               exact
-              path='/'
+              path='/hackernews-clone'
               render={() => {
                 return (
                   <BestStories type={"best"} />
