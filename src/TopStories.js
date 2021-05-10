@@ -9,7 +9,7 @@ function TopStories(props) {
     // const [loaded, setLoaded] = useState(false);
     const{loading, final} = useAxios(Linktype);
     // console.log(final);
-
+    document.title = "HackerNews | Top Stories";
     
     if (loading) {
         return (

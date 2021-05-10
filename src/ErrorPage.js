@@ -5,7 +5,7 @@ import { Header } from 'semantic-ui-react';
 
 class ErrorPage extends Component{
     render(){
-        document.title = 'Error:404 Not Found'
+        document.title = 'Error 404: Page Not Found'
         return(
             <div id="err-page">
                 <Segment very raised padded  id='err-seg'>

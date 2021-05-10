@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 function TopStories(props) {
     var Linktype = props.type;
     const{loading,final} = useAxios(Linktype);
-
+    document.title = "HackerNews | New Stories";
     if (loading) {
         return (
             <div id="loa">

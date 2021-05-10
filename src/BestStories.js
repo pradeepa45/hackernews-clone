@@ -7,7 +7,7 @@ import useAxios from './useAxios';
 function BestStories(props) {
     var Linktype = props.type;  
     const { loading, final } = useAxios(Linktype);
-
+    document.title = "HackerNews | Best Stories";
     if (loading) {
         return (
             <div id="loa">
