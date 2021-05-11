@@ -1,4 +1,4 @@
-import { Icon, Menu } from 'semantic-ui-react'
+import { Container, Icon, Menu } from 'semantic-ui-react'
 import { Component } from 'react';
 import { BrowserRouter as Router, NavLink, Route, Switch } from 'react-router-dom'
 import BestStories from './BestStories';
@@ -19,8 +19,9 @@ export default class App extends Component {
     const { activeitem } = this.state;
     return (
       <div id="cont">
+        <Container fluid>
         <Router>
-          <Menu size='huge' inverted id="myHeader">
+          <Menu size='huge' inverted id="myHeader" stackable >
             <Menu.Item id="to-top">
               <Icon name='hacker news square' size='large'></Icon>
             </Menu.Item>
@@ -96,6 +97,7 @@ export default class App extends Component {
           </Switch>
         </Router>
 
+        </Container>
 
       </div>
     );
