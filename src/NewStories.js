@@ -2,12 +2,11 @@ import React from 'react';
 import { Container, Dimmer, Feed, Loader, Segment } from 'semantic-ui-react';
 import NewsTemplate from './NewsTemplate';
 import useAxios from './useAxios';
-import {Link} from 'react-router-dom';
 
 
-function TopStories(props) {
+function NewStories(props) {
     var Linktype = props.type;
-    const{loading,final} = useAxios(Linktype);
+    const{ loading, final } = useAxios(Linktype);
     document.title = "HackerNews | New Stories";
     if (loading) {
         return (
@@ -28,7 +27,6 @@ function TopStories(props) {
                         const {id, title, by, url, score, time } = item.data
                         return (
                             <NewsTemplate
-                                as={Link} to={`/new/${id}`}
                                 key={id}
                                 title={title}
                                 by={by}
@@ -44,4 +42,4 @@ function TopStories(props) {
     }
 }
 
-export default TopStories;
+export default NewStories;
