@@ -19,6 +19,7 @@ code {
 #cont{
   background-image: url('old_map.png');
   background-attachment: fixed;
+  /* overflow-y: scroll; */
 }
 
 #loa{

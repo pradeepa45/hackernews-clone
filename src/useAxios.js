@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-export default function useAxios(Linktype) {
-  const url = `https://hacker-news.firebaseio.com/v0/${Linktype}stories.json?print=pretty&orderBy="$key"&limitToFirst=30`;
+export default function useAxios(Linktype,startIndex,lastIndex) {
+  const url = `https://hacker-news.firebaseio.com/v0/${Linktype}stories.json?print=pretty&orderBy="$key"&startAt="${startIndex}"&endAt="${lastIndex}"`;
   const [ids, setIds] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);

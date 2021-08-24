@@ -12,7 +12,7 @@ export default class App extends Component {
   }
   handleItemClick = (e, { name }) => {
     this.setState({
-      activeitem: name
+      activeitem: name,
     })
   }
   render() {
